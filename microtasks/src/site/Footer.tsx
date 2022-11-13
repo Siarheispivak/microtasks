@@ -1,10 +1,14 @@
 import React from 'react';
 
-export const Footer = () => {
+type FooterType = {
+    titleForFooter: string
+}
+
+export const Footer = (props:FooterType) => {
     return(
         <>
         <div>
-            Footer
+            {props.titleForFooter}
         </div>
         </>
     )

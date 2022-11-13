@@ -8,8 +8,8 @@ function App() {
   return (
     <div className="App">
         <Header titleForHeader={'NEW HEADER'}/>
-        <Body titleForBody={'New Body'}/>
-        <Footer/>
+        <Body titleForBody={'NEW BODY'}/>
+        <Footer titleForFooter={'NEW FOOTER'}/>
     </div>
   );
 }
