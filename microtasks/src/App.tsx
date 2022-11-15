@@ -1,33 +1,32 @@
-import React from 'react';
+import React,{ MouseEvent } from 'react';
+
 import './App.css';
 import {NewComponent} from "./site/NewComponent";
+import {Button} from "./components/Button";
 
-let students = [
-    {id:1,name:"S",age:54},
-    {id:2,name:"Se",age:23},
-    {id:3,name:"Ser",age:22},
-    {id:4,name:"ar",age:17},
-    {id:5,name:"dar",age:12},
-    {id:6,name:"perl",age:11},
-    {id:7,name:"ctar",age:1},
-    {id:8,name:"avatar",age:2},
-    {id:9,name:"aar",age:3},
-    {id:10,name:"artiom",age:4},
-    {id:11,name:"aval",age:5},
-
-]
-const topCars = [
-    {manufacturer:'BMW', model:'m5cs'},
-    {manufacturer:'Mercedes', model:'e63s'},
-    {manufacturer:'Audi', model:'rs6'}
-]
 
 function App() {
 
-  return (
+    const Button1Foo=(subscriber: string,age:number,address:string)=>{
+        console.log(subscriber,age)
+    }
+    const Button2Foo=(subscriber: string)=>{
+        console.log(subscriber)
+    }
+    const Button3Foo=()=>{
+        console.log('i am stupid')
+    }
+
+    return (
     <div className="App">
 
-        <NewComponent students={students} topCars={topCars}/>
+        {/*<button >MyYouTubeChanel-1</button>*/}
+        {/*<button >MyYouTubeChanel-2</button>*/}
+        <Button name={'MyYouTubeChanel-1'} callBack={()=>Button1Foo('i am Vasilij', 21, 'live in minsk')}/>
+        <Button name={'MyYouTubeChanel-2'}callBack={()=>Button2Foo('i am Ivan')}/>
+        {/*<Button name={'MyYouTubeChanel-3'}callBack={()=>Button2Foo('i am stupid button')}/>*/}
+        <Button name={"Stupid"} callBack={Button3Foo}/>
+
     </div>
   );
 }
