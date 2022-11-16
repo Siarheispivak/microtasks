@@ -1,8 +1,9 @@
 import React, {MouseEvent, useState} from 'react';
 
 import './App.css';
+import {NewComponent} from "./components/NewComponent";
 
-type FilterType = 'All'|'Dollars'|'Rubles'
+export type FilterType = 'All'|'Dollars'|'Rubles'
 
 function App() {
 
@@ -34,22 +35,24 @@ function App() {
 
     return (
         <>
-            <ul>
-                {currentMoney.map((objFromMoneyArr,index)=>{
-                    return(
-                        <li key={index}>
-                            <span>{objFromMoneyArr.banknots}</span>
-                            <span>{objFromMoneyArr.value}</span>
-                            <span>{objFromMoneyArr.number}</span>
-                        </li>
-                    )
-                })}
-            </ul>
-            <div style={{marginLeft: '35px'}}>
-                <button onClick={()=>onClickFilterHandler('All')}>all</button>
-                <button onClick={()=>onClickFilterHandler('Rubles')}>rubles</button>
-                <button onClick={()=>onClickFilterHandler('Dollars')}>dollars</button>
-            </div>
+
+            <NewComponent currentMoney={currentMoney} onClickFilterHandler={onClickFilterHandler}/>
+            {/*<ul>*/}
+            {/*    {currentMoney.map((objFromMoneyArr,index)=>{*/}
+            {/*        return(*/}
+            {/*            <li key={index}>*/}
+            {/*                <span>{objFromMoneyArr.banknots}</span>*/}
+            {/*                <span>{objFromMoneyArr.value}</span>*/}
+            {/*                <span>{objFromMoneyArr.number}</span>*/}
+            {/*            </li>*/}
+            {/*        )*/}
+            {/*    })}*/}
+            {/*</ul>*/}
+            {/*<div style={{marginLeft: '35px'}}>*/}
+            {/*    <button onClick={()=>onClickFilterHandler('All')}>all</button>*/}
+            {/*    <button onClick={()=>onClickFilterHandler('Rubles')}>rubles</button>*/}
+            {/*    <button onClick={()=>onClickFilterHandler('Dollars')}>dollars</button>*/}
+            {/*</div>*/}
         </>
 
 
